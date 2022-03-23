@@ -1,0 +1,132 @@
+@import './assets/icons/fontawesome-free-6.1.1-web/css/all.css';
+
+@font-face {
+  font-family: Graphik-regular;
+  src: url(./assets/Graphik-Font-Family/GraphikRegular.otf);
+}
+
+body {
+  font-family: Graphik-regular;
+  background: #141414;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+#content {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+}
+
+.navbar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  margin: 0 1rem;
+  border: 1px dashed #8247be;
+}
+
+button {
+  all: unset;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #8247be;
+}
+
+button.active {
+  background: #3d1268;
+}
+
+.navbar > button:nth-child(1),
+.navbar > button:nth-child(2) {
+  border-right: 1px dashed #8247be;
+}
+
+.container {
+  padding: 1rem;
+}
+
+.home,
+.menu {
+  display: grid;
+}
+
+.home div:nth-child(1),
+.menu > div:nth-child(1),
+.about > div:nth-child(1) {
+  text-align: center;
+  font-size: 3rem;
+  align-self: center;
+  margin: 1rem 0;
+}
+
+.home button {
+  font-size: 1.5rem;
+  text-align: center;
+  align-self: flex-start;
+  padding: 1rem;
+  border: 1px solid #8247be;
+}
+
+.home button:hover::after {
+  content: ' ➜';
+}
+
+.menu {
+  grid-template-rows: repeat(4, auto);
+  gap: 2rem;
+}
+
+.menu .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  gap: 1rem;
+}
+
+.menu .grid .menu-item {
+  position: relative;
+  font-size: 3rem;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px dashed #8247be;
+
+  transition: font-size 0.5s;
+}
+
+.menu .grid .menu-item:nth-child(1) {
+  color: #fbaf00;
+}
+
+.menu .grid .menu-item:hover {
+  background: rgba(130, 71, 190, 0.2);
+  font-size: 3.7rem;
+
+  cursor: pointer;
+}
+
+.menu .grid .menu-item:hover::after,
+.menu .grid .menu-item:nth-child(1)::after {
+  position: absolute;
+  content: attr(value);
+  background: rgba(130, 71, 190, 0.5);
+  font-family: Graphik-regular;
+  font-size: 1.2rem;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+  padding: 0.4rem 0;
+}
+
+.about {
+  display: grid;
+  grid-template-rows: auto 1fr 1fr;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
